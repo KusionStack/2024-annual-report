@@ -77,6 +77,8 @@ export const defaultLanguage = 'zh';  // 'zh' or 'en'
 │   │   └── translations.js  # 翻译文件
 │   └── assets/          # 静态资源文件
 ├── public/             # 公共资源目录
+│   ├── favicon.ico     # 网站图标
+│   └── index.html      # HTML 模板
 ├── output/            # 预先截取的长图
 │   ├── 2024-annual-report-en.png  # 英文版
 │   └── 2024-annual-report-zh.png  # 中文版
