@@ -77,6 +77,9 @@ Translations are located in `src/i18n/translations.js`.
 │   │   └── translations.js  # Translation files
 │   └── assets/          # Static assets
 ├── public/             # Public assets directory
+├── output/            # Pre-captured full-page screenshots
+│   ├── 2024-annual-report-en.png  # English version
+│   └── 2024-annual-report-zh.png  # Chinese version
 └── package.json        # Project configuration
 ```
 
