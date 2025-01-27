@@ -1,15 +1,15 @@
 ![image](https://github.com/user-attachments/assets/26626d44-c1ac-4e34-b19e-b07a4cbc9387)
 
-# KusionStack 2024 Annual Report
+# KusionStack & KCL 2024 Annual Report
 
 [中文](./README.zh-CN.md) | English
 
-This is the source code repository for the KusionStack 2024 Annual Report, showcasing KusionStack's journey, key milestones, and core metrics throughout 2024.
+This is the source code repository for the KusionStack & KCL 2024 Annual Report, showcasing KusionStack & KCL's journey, key milestones, and core metrics throughout 2024.
 
 ## Key Contents
 
 - **Annual Statistics**: Key metrics including major releases, feature releases, and community engagement
-- **Key Milestones**: Important moments and achievements of KusionStack in 2024
+- **Key Milestones**: Important moments and achievements of KusionStack & KCL in 2024
 - **Enterprise Users**: Showcasing use cases from various industries
 - **Core Projects Progress**: Detailed progress of each core project
   - Kusion: Intent-driven Platform Orchestrator

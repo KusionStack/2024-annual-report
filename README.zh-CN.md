@@ -1,13 +1,13 @@
 ![image](https://github.com/user-attachments/assets/6a3458e7-8166-45b2-82e4-b394b1369dc5)
 
-# KusionStack 2024 年度报告
+# KusionStack & KCL 2024 年度报告
 
-这是 KusionStack 2024 年度报告的源代码仓库。该报告展示了 KusionStack 在 2024 年的发展历程、重要里程碑和核心数据。
+这是 KusionStack & KCL 2024 年度报告的源代码仓库。该报告展示了 KusionStack & KCL 在 2024 年的发展历程、重要里程碑和核心数据。
 
 ## 主要内容
 
 - **年度统计数据**：展示了包括主版本发布、功能项发布、社区参与度等关键指标
-- **重要里程碑**：记录了 2024 年 KusionStack 的重要时刻与成就
+- **重要里程碑**：记录了 2024 年 KusionStack & KCL 的重要时刻与成就
 - **企业用户案例**：展示了来自不同行业的企业用户使用案例
 - **核心项目进展**：详细介绍了各个核心项目的发展情况
   - Kusion：意图驱动的平台编排器
