@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/26626d44-c1ac-4e34-b19e-b07a4cbc9387)
+
 # KusionStack 2024 Annual Report
 
 [中文](./README.zh-CN.md) | English
