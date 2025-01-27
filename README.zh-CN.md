@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/6a3458e7-8166-45b2-82e4-b394b1369dc5)
+
 # KusionStack 2024 年度报告
 
 这是 KusionStack 2024 年度报告的源代码仓库。该报告展示了 KusionStack 在 2024 年的发展历程、重要里程碑和核心数据。
