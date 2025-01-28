@@ -1,2 +1,2 @@
 // Language configuration
-export const defaultLanguage = 'zh';  // 'zh' or 'en'
+export const defaultLanguage = 'en';  // 'zh' or 'en'

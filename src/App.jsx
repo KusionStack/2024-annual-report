@@ -126,7 +126,7 @@ const Milestone = ({ date, title, image, isLast }) => (
   </div>
 );
 
-const ProjectCard = ({ title, description, stats, highlights, name }) => (
+const ProjectCard = ({ title, name, description, stats, highlights }) => (
   <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
     <div className="p-8">
       <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{title}</h3>
@@ -145,7 +145,7 @@ const ProjectCard = ({ title, description, stats, highlights, name }) => (
           </div>
         </div>
         <div className="space-y-2">
-          <h4 className="text-sm font-medium text-gray-600">OpenRank 指标</h4>
+          <h4 className="text-sm font-medium text-gray-600">OpenRank</h4>
           <div className="aspect-[16/11] rounded-lg overflow-hidden bg-gray-50">
             <img 
               src={`/assets/openrank/${name}.png`} 
@@ -157,11 +157,11 @@ const ProjectCard = ({ title, description, stats, highlights, name }) => (
       </div>
 
       {stats && (
-        <div className="grid grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-4 mb-6">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition-colors duration-300">
-              <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
-              <div className="text-sm text-gray-600">{stat.label}</div>
+            <div key={index} className="bg-gray-50 rounded-xl p-3 sm:p-4 hover:bg-gray-100 transition-colors duration-300">
+              <div className="text-lg sm:text-2xl font-bold text-primary mb-1">{stat.value}</div>
+              <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -383,43 +383,43 @@ function App() {
 
           <div className="max-w-3xl mx-auto">
             <Milestone 
-              date="2024年3月"
-              title="KusionStack 入选 Platform Engineering 社区的 Platform Tooling Landscape"
+              date="2024.3"
+              title={t.milestone1.title}
               image="platform-landscape.webp"
             />
-            <Milestone 
-              date="2024年6月"
-              title="PlatformCon 2024 由 KusionStack 作为赞助方和线下活动组织者，带来 2 场演讲，1 场直播 Workshop 和 1 场线下 Meetup 活动"
+            {defaultLanguage === 'zh' ? <Milestone 
+              date="2024.6"
+              title={t.milestone2.title}
               image="platformcon24.jpg"
-            />
+            /> : null}
             <Milestone 
-              date="2024年7月"
-              title="Karpor 正式开源，在 Apache CoC 亚洲开发者大会首发演讲，登上 GitHub Trending 日榜"
+              date="2024.7"
+              title={t.milestone3.title}
               image="karpor-opensource.jpg"
             />
             <Milestone 
-              date="2024年7月"
-              title="OpenInfra 亚太用户组线上 Meetup 中分享使用 KusionStack 构建 IDP 的实践"
+              date="2024.7"
+              title={t.milestone4.title}
               image="openinfra-meetup.jpg"
             />
             <Milestone 
-              date="2024年8月"
-              title="KusionStack 与越南最大的电信运营商 Viettel Cloud 达成深度合作"
-              image="kusionstack-viettel.jpg"
+              date="2024.8"
+              title={t.milestone5.title}
+              image={defaultLanguage === 'zh' ? "kusionstack-viettel.jpg" : undefined}
             />
             <Milestone 
-              date="2024年8月"
-              title="KCL 与 Crossplane 达成深度合作"
+              date="2024.8"
+              title={t.milestone6.title}
               image="kcl-crossplane.png"
             />
             <Milestone 
-              date="2024年8月"
-              title="参加 2024 KubeCon HK 与来自各个社区的小伙伴们进行了交流与分享，KCL 和 KusionStack 社区也同 Crossplane 社区的同时进行了令人开心的线下沟通"
+              date="2024.8"
+              title={t.milestone7.title}
               image="kubecon-hk.png"
             />
             <Milestone 
-              date="2024年9月"
-              title="KusionStack 正式成为 CNCF Sandbox 项目"
+              date="2024.9"
+              title={t.milestone8.title}
               image="kusionstack-sandbox.jpg"
               isLast={true}
             />
@@ -455,20 +455,20 @@ function App() {
 
             {/* Company cards */}
             <UserCard 
-              name="蚂蚁集团" 
-              description={t.antGroup}
+              name={t.antGroup.name}
+              description={t.antGroup.description}
             />
             <UserCard 
-              name="字节跳动" 
-              description={t.bytedance}
+              name={t.bytedance.name}
+              description={t.bytedance.description}
             />
             <UserCard 
-              name="SafetyCulture" 
-              description={t.safetyCulture}
+              name={t.safetyCulture.name}
+              description={t.safetyCulture.description}
             />
             <UserCard 
-              name="Viettel" 
-              description={t.viettel}
+              name={t.viettel.name}
+              description={t.viettel.description}
             />
           </div>
         </div>
@@ -485,10 +485,10 @@ function App() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary text-sm font-medium mb-4">
               <CodeBracketIcon className="w-4 h-4" />
-              <span>{t.coreProjectsTitle}</span>
+              <span>{t.projectsTitle}</span>
             </div>
             <h2 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
-              {t.coreProjectsSubtitle}
+              {t.projectsSubtitle}
             </h2>
             {/* <p className="text-gray-600 text-lg">
               {t.coreProjectsDescription}
@@ -504,19 +504,12 @@ function App() {
               stats={[
                 { label: t.majorVersions, value: '5' },
                 { label: t.featureReleases, value: '15' },
-                // { label: t.newContributors, value: '11' },
                 { label: t.mergedPRs, value: '330' },
                 { label: t.totalStars, value: '1000+' },
                 { label: t.productHuntUpvotes, value: '280+' },
                 { label: t.productHuntRank, value: '#5' },
               ]}
-              highlights={[
-                '优化 CLI 工具，提供更友好的命令行体验',
-                '优化多集群部署体验',
-                '增强配置编排和验证能力',
-                '提供更稳定的企业级支持',
-                '发布 Kusion UI，可视化管理应用交付流程',
-              ]}
+              highlights={t.kusion.highlights}
             />
 
             {/* Karpor */}
@@ -532,12 +525,7 @@ function App() {
                 { label: t.newCommunityParticipants, value: '86' },
                 { label: t.mergedPRs, value: '190' },
               ]}
-              highlights={[
-                'Apache COC 亚洲开发者大会首发演讲',
-                '登上 GitHub Trending 日榜，阮一峰的科技周刊',
-                'GLCC 开源夏令营，指导学生完成开源课题',
-                '上线 Live Demo、社区任务、Landing Page，构建了开放、友好的社区氛围',
-              ]}
+              highlights={t.karpor.highlights}
             />
 
             {/* Kuperator */}
@@ -548,15 +536,10 @@ function App() {
               stats={[
                 { label: t.majorVersions, value: '4' },
                 { label: t.featureReleases, value: '4' },
-                // { label: t.openIssues, value: '40+' },
                 { label: t.mergedPRs, value: '200+' },
                 { label: t.newContributors, value: '11' },
               ]}
-              highlights={[
-                '增强 Kubernetes Operator 管理能力',
-                '简化自定义资源生命周期管理',
-                '提供更稳定的运行时支持'
-              ]}
+              highlights={t.kuperator.highlights}
             />
 
             {/* KCL */}
@@ -572,50 +555,41 @@ function App() {
                 { label: t.mergedPRs, value: '1000+' },
                 { label: t.thirdPartyLibraries, value: '331' },
               ]}
-              highlights={[
-                '升级 IDE 插件优化 KCL 代码编写体验和效率，全新的 playground!',
-                '完善 KCL 多语言 SDK，支持市面上多数编程语言的快速集成',
-                '全新的 KCL 命令行工具，更快速的包管理工具，以及更加丰富的三方库市场，三方库数量已达 331 个',
-                '完成了与 Crossplane 的深度合作，整个 Crossplane 生态系统现在可以利用 KCL 提供的高水平经验和能力来构建自己的云原生平台',
-                '参与了三次 Linux 基金会 LFX Mentorship 项目，与社区伙伴共同完成包含 KCL 包管理工具三方库版本管理，三方库 checksum 校验，KCL IDE 的快速恢复等多个任务的设计与研发'
-              ]}
+              highlights={t.kcl.highlights}
             />
-
           </div>
         </div>
       </Section>
 
       {/* New Year Greeting - Only show for Chinese */}
-      {defaultLanguage === 'zh' && (
-        <Section className="py-24 relative overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white to-red-50/30 pointer-events-none" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:32px_32px] opacity-[0.15]" />
-          
-          <div className="container mx-auto px-4 relative">
-            <div className="text-center max-w-3xl mx-auto relative">
-              {/* Decorative elements */}
-              <div className="absolute -left-12 -top-12 w-48 h-48 bg-red-500/5 rounded-full blur-3xl animate-pulse" />
-              <div className="absolute -right-12 -bottom-12 w-48 h-48 bg-yellow-500/5 rounded-full blur-3xl animate-pulse" />
+      <Section className="py-24 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white to-red-50/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:32px_32px] opacity-[0.15]" />
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center max-w-3xl mx-auto relative">
+            {/* Decorative elements */}
+            <div className="absolute -left-12 -top-12 w-48 h-48 bg-red-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute -right-12 -bottom-12 w-48 h-48 bg-yellow-500/5 rounded-full blur-3xl animate-pulse" />
 
-              <div className="relative space-y-6">
-                <div className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-red-50 text-red-500 text-sm font-medium">
-                  <span>{t.newYearTag}</span>
-                </div>
-                
-                <h2 className="text-4xl font-bold bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
-                  {t.newYearTitle}
-                </h2>
-                
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  {t.newYearMessage}<br/>
-                  {t.newYearWish}
-                </p>
+            <div className="relative space-y-6">
+              <div className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-red-50 text-red-500 text-sm font-medium">
+                <span>{t.newYearTag}</span>
               </div>
+              
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
+                {t.newYearTitle}
+              </h2>
+              
+              <p className="text-gray-600 text-lg leading-relaxed">
+                {t.newYearMessage}<br/>
+                {t.newYearWish}
+              </p>
             </div>
           </div>
-        </Section>
-      )}
+        </div>
+      </Section>
     </div>
   );
 }
